@@ -1,0 +1,206 @@
+:root {
+  --primary-color: #f675a8;
+  --secondary-color: #554994;
+  --secondary-active-color: #3f2f94;
+  --tenance-color: #277bc0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: rgb(255, 255, 255);
+  font-family: "PT Sans", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* LOGIN PAGE */
+.login-page {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.login-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 56px;
+}
+.login-card img {
+  width: 64px;
+  height: auto;
+}
+.login-card p {
+  font-size: 12px;
+  color: #999;
+}
+.login-card p a {
+  color: var(--tenance-color);
+}
+
+#loginForm label {
+  display: block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.64);
+  margin-bottom: 4px;
+}
+#loginForm input {
+  width: 100%;
+  padding: 12px 16px;
+  outline: none;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  transition: all linear 100ms;
+}
+#loginForm input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0px 0px 4px 2px rgba(246, 117, 168, 0.4);
+}
+#loginForm button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  background-color: var(--secondary-color);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: all linear 200ms;
+}
+#loginForm button:hover,
+#loginForm button:focus {
+  background-color: var(--secondary-active-color);
+}
+#loginForm button:disabled {
+  background-color: #ebebeb;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.login-view {
+  height: 100vh;
+  background-image: url(../images/hero.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* APP PAGE */
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  padding: 16px 0;
+  background: var(--secondary-color);
+}
+.header .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .container div:first-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header .logo {
+  max-width: 40px;
+  margin-right: 16px;
+}
+.header #username-display {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+.header .app-name {
+  font-size: 32px;
+  color: white;
+  font-family: "Rubik Iso", cursive;
+}
+.header .timer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  color: white;
+}
+.header .timer p {
+  font-size: 8px;
+  letter-spacing: 0.64px;
+  text-transform: uppercase;
+}
+.header .timer span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* GAME */
+#game {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(3, 152px);
+  grid-gap: 16px;
+  height: max-content;
+}
+.game-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  background: none;
+}
+.game-card .game-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.game-card .game-card__cape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: white;
+  z-index: 9;
+}
+
+/* FOOTER */
+.footer {
+  border-top: solid 1px #ebebeb;
+  padding: 24px 0;
+}
+.footer p {
+  font-size: 12px;
+  text-align: center;
+  color: #999;
+}
+.footer a {
+  color: var(--tenance-color);
+}
